@@ -1,4 +1,3 @@
 # Sistemas-Contables
-Desarrollo de sistema contable para empresas
-
-que archivo mas raro el que me mandaste!
+Desarrollo de sistema contable para empresas 
+Proyecto de SIC-115
