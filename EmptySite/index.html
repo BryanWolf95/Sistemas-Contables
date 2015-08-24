@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+
+    </head>
+    <body onload="IniciarLocalizacion()">
+
+        <div id="mensaje"></div>
+        <script>
+            var sms = document.getElementById("mensaje");
+
+            function IniciarLocalizacion() {
+
+                var geolocation = navigator.geolocation;
+
+                if (geolocation) {
+                    try {
+                        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+
+                    } catch (err) {
+                        sms.innerHTML = 'ERROR';
+                    }
+                } else {
+                    sms.innerHTML = 'Su navegador no soporta la geolocalizacion';
+                }
+            }
+
+
+            function successCallback(location) {
+
+                sms.innerHTML = "<p>Latitud: " + location.coords.latitude + "</p>";
+                sms.innerHTML += "<p>Longitud:  " + location.coords.longitude + "</p>";
+
+            }
+
+            function errorCallback() {
+
+
+
+                sms.innerHTML = "Hubo un error en el acceso a su peticion";
+            }
+
+
+
+
+        </script>
+    </body>
+</html>
